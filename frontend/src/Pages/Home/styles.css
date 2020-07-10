@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Header */
+.menuFixado{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: rgb(0, 255, 255);
+}
+
+.logoMenu{
+    width: 30px;
+    height: 30px;
+    margin-left: 5%;
+}
+
+.menu{
+    float: right;
+    margin-right: 5%;
+    margin-top: 0.5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a{
+    margin-left: 10px;
+    font: 300 18px Roboto, sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+/* Créditos ao IanLunn pelo efeito */
+/* Link: https://github.com/IanLunn/Hover */
+/* Underline From Center */
+.hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #dfdfdf;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+  }
+
+/* Body */
+.conteudo{
+    height: 400px;
+}
+
+/* Footer */
+footer{
+    background: rgba(0, 255, 255, 0.2);
+    height: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.contato{
+    margin-left: 5%;
+    margin-top: calc(10% - 36px);
+    width: 100%;
+    max-width: 500px;
+    float: left;
+}
+
+.contato p{
+    margin-bottom: 2%;
+    font: 300 24px Roboto, sans-serif;
+}
+
+.direitos{
+    margin-right: 5%;
+    float: right;
+}
+
+.logoRodape{
+    width: 200px;
+    height: 200px;
+    margin-left: calc(100%/2 - 100px);
+}
