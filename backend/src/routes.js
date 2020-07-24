@@ -1,31 +1,26 @@
 const express = require('express');
 
-const connection = require('./database/conection');
-
-const routes = express.Router();
-
 //Estrutura de import dos arquivos
 // const NomeArquivo = require ('./controllers/NomeArquivo');
-const SessionController = require('./controllers/SessionController');
+const UsuariosController  = require('./controllers/UsuariosController');
+const SessionController  = require('./controllers/SessionController');
+
+const routes = express.Router();
 
 // Estrutura de conexão para requisições
 // routes.get('./rotaNavegador', NomeArquivo.funcao);
 // routes.post('./rotaNavegador', NomeArquivo.funcao);
 
-routes.get('/usuarios', async(request, response)=>{
-    const usuarios = await connection('usuarios').select('*');
-    return response.json(usuarios);
-});
+//Rota destinada a login
+routes.post('/session', SessionController.create);
 
-routes.post('/usuarios', async(request, response)=>{
-    const { id, nome, email, senha } = request.body;
+//Rota de pesquisa de usuarios
+routes.get('/usuarios', UsuariosController.index);
 
-    await connection('usuarios').insert({
-        id,
-        nome,
-        email,
-        senha,
-    });
-});
+//Rota de cadastro de usuarios
+routes.post('/usuarios', UsuariosController.create);
+
+//Rota de cadastro de usuarios
+routes.delete('/usuarios', UsuariosController.delete);
 
 module.exports = routes;

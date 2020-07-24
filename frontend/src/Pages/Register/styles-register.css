@@ -14,11 +14,11 @@
     border: none;
 }
 
-.loginBtn{
+.registerContent .loginBtn{
     background: rgba(196,196,196,1);
 }
 
-.registerBtn{
+.registerContent .registerBtn{
     background: rgb(0,255,255);
 }
 
